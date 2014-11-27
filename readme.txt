@@ -15,7 +15,7 @@ The Miniclip Games Arcade WordPress plugin gives you a simple way to make use of
 
 This plugin is great for those who want to get some free interactive content onto their website. Games are a fun way to encourage your site visitors to stick around, and visit again and Miniclip has one of the best games libraries online.
 
-Currently you can embed games in your blog posts using a shortcode, and we have a lot of ideas for future additions. Please feel free to [http://twitter.com/miniclip/](ping us on Twitter) if you have any feedback or suggestions.
+Currently you can embed games in your blog posts using a shortcode, and we have a lot of ideas for future additions. Please feel free to [ping us on Twitter](http://twitter.com/miniclip/) if you have any feedback or suggestions.
 
 Use of the Miniclip Games plugin is subject to agreeing to the Miniclip webmaster [terms and conditions](http://www.miniclip.com/games/page/en/terms-and-conditions/#webmaster-terms).
 
