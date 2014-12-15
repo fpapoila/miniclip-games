@@ -6,7 +6,7 @@
   Author: Miniclip SA
   Author URI: http://www.miniclip.com/
   Text Domain: mc-games
-  Version: 1
+  Version: 1.0.1
 
   Copyright 2014 Miniclip SA
 
@@ -34,7 +34,7 @@ function mcg_enqueue() {
 
 	wp_enqueue_style( 'mcg-style', plugins_url( '/styles/styles.css', __FILE__ ), null, '1.0' );
 
-	wp_enqueue_script( 'mcg-script', plugins_url( '/js/scripts.js', __FILE__ ), null, '1.0' );
+	wp_enqueue_script( 'mcg-script', plugins_url( '/js/scripts.js', __FILE__ ), array( 'jquery' ), '1.0' );
 
 }
 
