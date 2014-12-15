@@ -33,13 +33,14 @@ function mc_shortcode_game( $atts ) {
 
 		if ( ! empty( $game['embed'] ) ) {
 			ob_start();
+			$game['embed'] = html_entity_decode( $game['embed'] );
 ?>
-	<a href="" data-target="mc-game-<?php echo $game['game_id']; ?>" class="mc-game-play">
+	<a href="<?php echo $game['game_path']; ?>" data-target="mc-game-<?php echo $game['game_id']; ?>" class="mc-game-play">
 		<img src="<?php echo esc_url( $game['big_icon'] ); ?>" />
 		<?php printf( __( 'Play %s' ), $game['name'] ); ?>
 	</a>
 	<div class="mc-game-popup" id="mc-game-<?php echo $game['game_id']; ?>">
-		<?php echo html_entity_decode( $game['embed'] ); ?>
+		<?php echo $game['embed']; ?>
 	</div>
 <?php
 			return ob_get_clean();
