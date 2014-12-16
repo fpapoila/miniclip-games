@@ -32,16 +32,20 @@ function mc_shortcode_game( $atts ) {
 	if ( ! is_wp_error( $game ) ) {
 
 		if ( ! empty( $game['embed'] ) ) {
-			ob_start();
+			// decode so we can modify it a bit
 			$game['embed'] = html_entity_decode( $game['embed'] );
+			$game['embed'] = preg_replace('#(<script)(.*)(script>)#si', '', $game['embed']);
+
+			// encode again
+			$game['embed'] = htmlentities( $game['embed'] );
+
+			ob_start();
 ?>
-	<a href="<?php echo $game['game_path']; ?>" data-target="mc-game-<?php echo $game['game_id']; ?>" class="mc-game-play">
+	<a href="<?php echo $game['game_path']; ?>" data-target="<?php echo $game['game_id']; ?>" class="mc-game-play">
 		<img src="<?php echo esc_url( $game['big_icon'] ); ?>" />
 		<?php printf( __( 'Play %s' ), $game['name'] ); ?>
 	</a>
-	<div class="mc-game-popup" id="mc-game-<?php echo $game['game_id']; ?>">
-		<?php echo $game['embed']; ?>
-	</div>
+	<script>mcg_game_list[<?php echo $game['game_id']; ?>] = '<?php echo $game['embed']; ?>';</script>
 <?php
 			return ob_get_clean();
 		}
