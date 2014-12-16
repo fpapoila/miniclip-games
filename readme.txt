@@ -23,7 +23,7 @@ Use of the Miniclip Games plugin is subject to agreeing to the Miniclip webmaste
 
 After downloading and installing the plugin you can start to embed Miniclip games into your website.
 
-* Shortcode Embed
+## Shortcode Embed
 
 The most basic usage is with a shortcode. All you need to use this is the game id for the game you would like to embed. The following code will embed the game '8 Ball Pool' on your site.
 
