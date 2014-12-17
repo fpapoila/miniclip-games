@@ -1,6 +1,6 @@
 === Miniclip Games Arcade ===
 Contributors: binarymoon
-Tags: games, miniclip, shortcode, embed
+Tags: games, miniclip, shortcode, embed, arcade
 Requires at least: 3.9
 Tested up to: 4.0
 Stable tag: trunk
@@ -23,7 +23,7 @@ Use of the Miniclip Games plugin is subject to agreeing to the Miniclip webmaste
 
 After downloading and installing the plugin you can start to embed Miniclip games into your website.
 
-## Shortcode Embed
+= Shortcode Embed =
 
 The most basic usage is with a shortcode. All you need to use this is the game id for the game you would like to embed. The following code will embed the game '8 Ball Pool' on your site.
 
@@ -32,6 +32,16 @@ The most basic usage is with a shortcode. All you need to use this is the game i
 In the future we will create a list of all available game ids. In the mean time you can get a list of all the relevant games here: http://webmasters.miniclip.com/api/genre/432/ (note that I know this isn't very friendly. I promise it will be improved! :))
 
 == Changelog ==
+
+= 1.0.3 =
+* stop all the games from loading at once when there are multiple games on a page
+* more javascript improvements
+
+= 1.0.2 =
+* javascript changes
+
+= 1.0.1 =
+* ensure jquery is included in the page if it's not being used by the theme already
 
 = 1.0 =
 * first version live! :)
