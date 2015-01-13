@@ -40,8 +40,6 @@ add_shortcode( 'game', 'mc_shortcode_game' );
  */
 function mc_shortcode_category( $atts ) {
 
-	$quantity = 5;
-
 	$atts = shortcode_atts( array(
 		'id' => 0,
 	), $atts );
@@ -53,33 +51,8 @@ function mc_shortcode_category( $atts ) {
 		return;
 	}
 
-	$category_id = (int) $id;
-
 	$mc_games = new miniclip_games();
-
-	$category = $mc_games->get_category( $category_id );
-
-	if ( $category && ! is_wp_error( $category ) ) {
-
-		$count = 0;
-		$html = '';
-
-		foreach( $category as $game ) {
-			if ( '1' == $game['is_webmaster_game'] ) {
-				$html .= $mc_games->embed_game( $game['game_id'] );
-				$count ++;
-			}
-
-			if ( $count >= $quantity ) {
-				break;
-			}
-		}
-
-		return $html;
-
-	}
-
-	return '';
+	return $mc_games->embed_category( $id );
 
 }
 

@@ -6,7 +6,7 @@
   Author: Miniclip SA
   Author URI: http://www.miniclip.com/
   Text Domain: mc-games
-  Version: 1.1
+  Version: 1.2
 
   Copyright 2014 Miniclip SA
 

@@ -83,6 +83,24 @@ class miniclip_games {
 
 
 	/**
+	 * get a list of all the categories
+	 *
+	 * @return boolean
+	 */
+	public function get_categories() {
+
+		$data = $this->get( 'genre', '' );
+
+		if ( ! empty( $data ) ) {
+			return $data;
+		}
+
+		return false;
+
+	}
+
+
+	/**
 	 * Generic method for accessing api data
 	 *
 	 * @param type $key
@@ -159,6 +177,43 @@ class miniclip_games {
 				return ob_get_clean();
 
 			}
+
+		}
+
+		return '';
+
+	}
+
+
+	/**
+	 * list game categories
+	 * @param type $category_id
+	 * @return string
+	 */
+	function embed_category( $category_id = 0 ) {
+
+		$quantity = 5;
+		$category_id = (int) $category_id;
+
+		$category = $this->get_category( $category_id );
+
+		if ( $category && ! is_wp_error( $category ) ) {
+
+			$count = 0;
+			$html = '';
+
+			foreach( $category as $game ) {
+				if ( '1' == $game['is_webmaster_game'] ) {
+					$html .= $this->embed_game( $game['game_id'] );
+					$count ++;
+				}
+
+				if ( $count >= $quantity ) {
+					break;
+				}
+			}
+
+			return $html;
 
 		}
 
