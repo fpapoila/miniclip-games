@@ -6,7 +6,7 @@
   Author: Miniclip SA
   Author URI: http://www.miniclip.com/
   Text Domain: mc-games
-  Version: 1.2
+  Version: 1.2.1
 
   Copyright 2014 Miniclip SA
 
@@ -40,18 +40,20 @@ include( 'library.php' );
 include( 'inc/shortcode.php' );
 include( 'inc/widget-category.php' );
 
+define( 'MCG_SCRIPT_VERSION', '1.0.3' );
+
 /**
  * enqueue scripts and styles needed for the plugin to function
  */
 function mcg_enqueue() {
 
-	wp_enqueue_style( 'mcg-style', plugins_url( '/styles/styles.css', __FILE__ ), null, '1.0.2' );
+	wp_enqueue_style( 'mcg-style', plugins_url( '/styles/styles.css', __FILE__ ), null, MCG_SCRIPT_VERSION );
 
 	if ( WP_DEBUG ) {
-		wp_enqueue_script( 'mcg-script', plugins_url( '/js/scripts.js', __FILE__ ), array( 'jquery' ), '1.0.3' );
+		wp_enqueue_script( 'mcg-script', plugins_url( '/js/scripts.js', __FILE__ ), array( 'jquery' ), MCG_SCRIPT_VERSION );
 	} else {
 		// enqueue compressed version for production
-		wp_enqueue_script( 'mcg-script', plugins_url( '/js/min/scripts-min.js', __FILE__ ), array( 'jquery' ), '1.0.3' );
+		wp_enqueue_script( 'mcg-script', plugins_url( '/js/min/scripts-min.js', __FILE__ ), array( 'jquery' ), MCG_SCRIPT_VERSION );
 	}
 
 }

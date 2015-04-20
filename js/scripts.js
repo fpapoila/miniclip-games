@@ -1,6 +1,7 @@
 var mcg_game_list = new Array();
 
 ;(function( $ ){
+
 	// only do this stuff once everything has loaded
 	$( window ).load( function(){
 
@@ -59,4 +60,5 @@ var mcg_game_list = new Array();
 		});
 
 	});
+	
 })( jQuery );

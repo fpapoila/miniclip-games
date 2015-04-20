@@ -58,11 +58,18 @@ class Miniclip_Games_Category extends WP_Widget {
 
 		if ( $categories ) {
 			$current_category = ! empty( $instance['category'] ) ? intval( $instance['category'] ) : 0;
-			echo '<select id="' . $this->get_field_id( 'category' ) . '" name="' . $this->get_field_name( 'category' ) . '" >';
+?>
+<p>
+	<label for="<?php echo $this->get_field_name( 'category' ); ?>"><?php _e( 'Game Category:', 'miniclip-games' ); ?></label>
+	<select id="<?php echo $this->get_field_id( 'category' ); ?>" name="<?php echo $this->get_field_name( 'category' ); ?>" >';
+<?php
 			foreach( $categories as $cat ) {
-				echo '<option value="' . intval( $cat['category_id'] ) . '" ' . selected(  ) . ' >' . esc_html( $cat['name'] ) . '</option>';
+				echo '<option value="' . intval( $cat['category_id'] ) . '" ' . selected( intval( $cat['category_id'] ), $current_category ) . ' >' . esc_html( $cat['name'] ) . '</option>';
 			}
-			echo '</select>';
+?>
+	</select>
+</p>
+<?php
 		}
 
 	}

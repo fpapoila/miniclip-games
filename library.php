@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  *
  */
@@ -161,7 +162,8 @@ class miniclip_games {
 
 				// decode so we can modify it a bit
 				$game['embed'] = html_entity_decode( $game['embed'] );
-				$game['embed'] = preg_replace('#(<script)(.*)(script>)#si', '', $game['embed']);
+				$game['embed'] = preg_replace( '#(<script)(.*)(script>)#si', '', $game['embed'] );
+				$game['embed'] = str_replace( 'data-theme', 'data-campaign="wp-' . MCG_SCRIPT_VERSION . '" data-source="' . $_SERVER['HTTP_HOST'] . '" data-theme', $game['embed'] );
 
 				// encode again
 				$game['embed'] = htmlentities( $game['embed'] );

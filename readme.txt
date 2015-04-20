@@ -43,6 +43,10 @@ At the moment the easiest way to find the id for the game categories is to brows
 
 == Changelog ==
 
+= 1.2.1 =
+* Fix category widget so that selecting categories works again
+* tweak overlay css
+
 = 1.2 =
 * add a games category widget. Similar to the games category shortcode but you can add it to your sidebar widgets.
 
