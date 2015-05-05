@@ -1,5 +1,5 @@
 === Miniclip Games Arcade ===
-Contributors: binarymoon
+Contributors: binarymoon, miniclipgames
 Tags: games, miniclip, shortcode, embed, arcade
 Requires at least: 3.9
 Tested up to: 4.1
